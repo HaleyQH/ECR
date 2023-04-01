@@ -13,7 +13,6 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s - %(message)s
                     datefmt='%m/%d/%Y %H:%M:%S', level=logging.INFO)
 logger = logging.getLogger()
 
-
 class DatasetRead(Dataset):
     def __init__(self, name, config, dictionaries):
         super().__init__()

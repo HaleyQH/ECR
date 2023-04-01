@@ -45,7 +45,6 @@ def collate_bert(batch):
         'metadata': metadata
     }
 
-
 class Model(nn.Module):
 
     def __init__(self, config):

@@ -7,7 +7,6 @@ from transformers import BertModel
 
 from utils import settings
 
-
 class TextEmbedder(nn.Module):
     def __init__(self, config):
         super(TextEmbedder, self).__init__()

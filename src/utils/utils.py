@@ -10,6 +10,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s - %(message)s
 logger = logging.getLogger()
 
 
+
 def load_dictionary(config, path):
     type = config['type']
     filename = config['filename']

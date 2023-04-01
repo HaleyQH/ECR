@@ -29,3 +29,4 @@ class MetricF1:
 
     def f1(self):
         return 2 / (1 / self.pr() + 1 / self.re()) if self.pr() + self.re() != 0 else 0
+

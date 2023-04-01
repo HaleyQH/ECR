@@ -173,6 +173,7 @@ class Runner:
         loss_during_report = 0.0  # Effective loss during logging step
         loss_history = []  # Full history of effective loss; length equals total update steps
 
+
         model.zero_grad()
         optimizer_steps = 0
         f1_val = -1

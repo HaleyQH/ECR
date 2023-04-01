@@ -1,0 +1,75 @@
+{
+  "dictionaries": {
+    "bert_tokens": {
+      "init": {
+        "type": "bert",
+        "filename": "../bert-chinese"
+      }
+    }
+  },
+  "model": {
+    "name": "model",
+    "text_embedder": {
+      "bert": "../bert-chinese",
+      "dim": 768
+    },
+    "span-extractor": {
+      "dropout": 0.3
+    },
+    "distance": {
+      "dist_embed": 2,
+      "init_embeddings_std": 0.2,
+      "category": 4
+    },
+    "loss": {
+      "dropout": 0.1
+    }
+  },
+  "optimizer": {
+    "optimizer": "adam",
+    "iters": 10,
+    "per": 1,
+    "batch_size": 1,
+    "clip-norm": 10.0,
+    "model": "best.model",
+    "report_frequency": 80,
+    "adam_eps": 1e-6,
+    "adam_weight_decay": 1e-2,
+    "warmup_ratio": 0.1,
+    "gradient_accumulation_steps": 5
+  },
+  "lr-scheduler": {
+    "nr_iters_bert_training": 10,
+    "task_start_epoch": 0,
+    "task_end_epoch": 8,
+    "bert_start_epoch": 0,
+    "bert_end_epoch": 8,
+    "bert_warmup_ratio": 0.1,
+    "task_learning_rate_start": 1e-3,
+    "task_learning_rate_end": 1e-4,
+    "bert_learning_rate_start": 5e-5,
+    "bert_learning_rate_end": 0
+  },
+  "datasets": {
+    "train": {
+      "filename": "../data/pku0/train"
+    },
+    "test": {
+      "filename": "../data/pku0/test"
+    },
+    "valid": {
+      "filename": "../data/pku0/valid"
+    }
+  },
+  "trainer": {
+    "train": "train",
+    "valid": "valid",
+    "evaluate": "test",
+    "version": "bert",
+    "write-predictions": true
+  },
+  "metrics": [
+    "F1"
+  ]
+}
+
